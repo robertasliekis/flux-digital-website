@@ -1,0 +1,1324 @@
+//Global values start
+@font-face {
+  font-family: Montserrat;
+  src: url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+  font-display: swap;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --global-color-red: rgb(223, 20, 20);
+  --global-padding-left-right: 15%;
+  --global-color-grey: grey;
+  --global-color-grey-light: rgb(182, 182, 182);
+}
+
+img {
+  display: block;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+input {
+  outline: none;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", Helvetica, Sans-Serif;
+  font-weight: 600;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexCenterColumn {
+  @include flexCenter();
+  flex-direction: column;
+}
+
+.wrapper {
+  @include flexCenter();
+  width: 100%;
+  .container {
+    width: 75rem;
+  }
+}
+
+//Global values end
+
+.website-wrapper {
+  width: 100%;
+  background-color: white;
+  @include flexCenterColumn();
+  overflow: hidden;
+}
+
+//Navigation bar start
+
+//Burger menu start
+.burger-menu-wrapper {
+  @include flexCenter();
+  justify-content: flex-start;
+  cursor: pointer;
+  .burger-menu {
+    @include flexCenterColumn();
+    justify-content: space-between;
+    height: 1rem;
+    transition: 0.2s all ease;
+    .line {
+      width: 2rem;
+      height: 0.15rem;
+      border-radius: 0.1rem;
+      background-color: black;
+      transition: 0.2s all ease;
+      z-index: 1;
+    }
+  }
+
+  .burger-menu-text {
+    margin-left: 0.5rem;
+    font-weight: 600;
+  }
+}
+.burger-menu-wrapper:hover {
+  color: var(--global-color-red);
+  .burger-menu {
+    .line {
+      background-color: var(--global-color-red);
+    }
+  }
+}
+//Burger menu end
+.navbar-section {
+  background-color: white;
+  height: 5rem;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+}
+
+.navbar-content {
+  position: relative;
+  height: 100%;
+  @include flexCenter();
+  justify-content: space-between;
+  font-weight: 600;
+  .burger-menu-wrapper:hover {
+    color: var(--global-color-red);
+    .burger-menu {
+      height: 1.4rem;
+      .line {
+        background-color: var(--global-color-red);
+      }
+    }
+  }
+  .website-logo {
+    position: absolute;
+    transform: translate(-50%, 0%);
+    top: 0;
+    left: 50%;
+    @include flexCenter();
+    cursor: pointer;
+    background-color: var(--global-color-red);
+    height: 100%;
+    padding: 0 0.5rem;
+    z-index: 4;
+    .website-logo-icon {
+      background-image: url(../images/logo.webp);
+      background-position: center;
+      background-size: cover;
+      width: 4rem;
+      height: 4rem;
+    }
+    .website-logo-text {
+      color: white;
+      margin-left: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+
+  .search-bar-wrapper {
+    @include flexCenter();
+    justify-content: flex-end;
+    height: 100%;
+    .search-field {
+      height: 80%;
+      width: 0%;
+      margin-left: 1rem;
+      font-size: 1.5rem;
+      padding: 0rem;
+      border: 1px solid transparent;
+      transition: 0.3s all ease;
+    }
+    .search-button {
+      margin-left: 1rem;
+      cursor: pointer;
+    }
+    .become-client {
+      transition: 0.3s all ease;
+    }
+    .become-client:hover {
+      color: var(--global-color-red);
+    }
+    .search-field-open {
+      width: 12rem;
+      padding: 0 1rem;
+      border: 1px solid black;
+    }
+  }
+}
+
+.burger-menu-animation {
+  .line1 {
+    transform: rotate(45deg) translate(11px, 10px);
+  }
+  .line2 {
+    opacity: 0;
+  }
+  .line3 {
+    transform: rotate(-45deg) translate(10px, -10px);
+  }
+}
+
+//Navigation bar end
+
+//Overlay menu start
+.overlay-menu-wrapper {
+  position: fixed;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%);
+  transition: 1s all ease;
+  @include flexCenterColumn();
+  justify-content: space-between;
+  width: 30%;
+  height: 100vh;
+  padding: 2rem 0;
+  background-color: white;
+  box-shadow: 0px 0px 25px 6px rgba(0, 0, 0, 0);
+  font-weight: 800;
+
+  .burger-menu {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    .line {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+    .line1 {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    .line2 {
+      display: none;
+    }
+    .line3 {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+  .overlay-menu-list {
+    @include flexCenterColumn();
+    width: 100%;
+    .menu-item {
+      color: black;
+      font-size: 3rem;
+      padding: 1rem 0;
+      .menu-item-name {
+        transition: 0.3s all ease;
+      }
+      .menu-item-name:hover {
+        color: var(--global-color-red);
+      }
+    }
+  }
+  .social-media-icons {
+    @include flexCenter();
+    justify-content: space-between;
+    .icon {
+      transition: 0.3s all ease;
+      padding: 0 1rem;
+      font-size: 1.5rem;
+    }
+    .icon:hover {
+      color: var(--global-color-red);
+    }
+  }
+}
+
+.overlay-menu-visible {
+  transform: translateX(0);
+  box-shadow: 0px 0px 25px 6px rgba(0, 0, 0, 0.2);
+}
+//Overlay menu end
+
+//Chat button start
+.chat-button {
+  position: fixed;
+  z-index: 3;
+  @include flexCenter();
+  font-size: 2rem;
+  bottom: 1rem;
+  right: 1rem;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 2rem;
+  color: white;
+  background-color: var(--global-color-red);
+  cursor: pointer;
+  transition: 0.3s all ease;
+  .icon-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include flexCenter();
+    .icon {
+      transition: 0.3s all ease;
+    }
+    .icon2 {
+      position: absolute;
+      opacity: 0;
+    }
+  }
+}
+.chat-button-active {
+  .icon1 {
+    opacity: 0;
+  }
+  .icon2 {
+    opacity: 1 !important;
+  }
+}
+
+.chat-button-bottom {
+  bottom: 6rem;
+}
+.chat-button:hover {
+  box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 0.2);
+}
+//Chat button end
+
+//Chat window start
+.chat-window {
+  position: fixed;
+  @include flexCenterColumn();
+  justify-content: space-between;
+  height: 45vh;
+  width: 25rem;
+  bottom: 6rem;
+  right: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  z-index: -1;
+  box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  transition: 0.3s all ease;
+  .assistant-info {
+    @include flexCenter();
+    justify-content: flex-start;
+    width: 100%;
+    background-color: var(--global-color-red);
+
+    .assistant-name {
+      color: white;
+    }
+  }
+  .assistant-image {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    background-image: url(../images/support.webp);
+    background-position: center;
+    background-size: cover;
+    border: 2px solid white;
+    margin: 0 1rem;
+  }
+  .messages-list {
+    @include flexCenter();
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 90%;
+    width: 100%;
+    overflow-y: auto;
+    padding-top: 2rem;
+    .assistant-image {
+      width: 1.5rem;
+      height: 1.5rem;
+      border: none;
+      margin-right: 0.5rem;
+    }
+    .assistant-message {
+      width: 80%;
+      background-color: rgb(228, 238, 240);
+      border-radius: 0.5rem;
+      border-top-left-radius: 0;
+      padding: 0.5rem;
+      color: rgb(95, 95, 136);
+      font-size: 0.9rem;
+    }
+  }
+  .new-message,
+  .assistant-info {
+    height: 4rem;
+  }
+  .new-message {
+    width: 100%;
+    border-top: 2px solid rgb(235, 235, 235);
+    .message-field {
+      height: 100%;
+      width: 90%;
+      border: none;
+      padding: 0 0.5rem;
+      font-size: 1rem;
+      color: grey;
+    }
+    .send-button {
+      padding: 0.3rem;
+      cursor: pointer;
+    }
+    .icon {
+      color: grey;
+    }
+  }
+}
+
+.chat-window-bottom {
+  bottom: 11rem;
+}
+
+.chat-window-active {
+  z-index: 3;
+}
+
+//Chat window end
+
+//Welcome section start
+.welcome-content {
+  margin-top: 11rem;
+  .welcome-background {
+    position: relative;
+    @include flexCenterColumn();
+    justify-content: flex-end;
+    height: 60vh;
+    width: 100%;
+    background-image: url(../images/background01.webp);
+    background-position: center;
+    background-size: cover;
+    .welcome-text {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 0;
+      left: 50%;
+      @include flexCenterColumn();
+      width: 100%;
+      justify-content: space-between;
+      font-size: 4rem;
+      font-weight: 700;
+      .text-line1 {
+        color: rgb(53, 53, 53);
+        padding-bottom: 0.5rem;
+      }
+      .text-line2 {
+        padding-top: 0.5rem;
+        color: white;
+      }
+    }
+    .button {
+      background-color: var(--global-color-red);
+      font-size: 1.5rem;
+      padding: 1rem 2.5rem;
+      color: white;
+      margin-bottom: 2rem;
+      transition: 0.3s all ease;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .button:hover {
+      background-color: white;
+      color: var(--global-color-red);
+    }
+  }
+}
+//Welcome section end
+
+//Clients section start
+.clients-content {
+  @include flexCenter();
+  justify-content: space-between;
+  margin: 4rem 0;
+  height: 9rem;
+
+  .clients-carousel {
+    @include flexCenter();
+    justify-content: flex-start;
+    width: 80%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    .clients-container {
+      @include flexCenter();
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      justify-content: space-between;
+      animation-name: carousel-animation;
+      animation-duration: 4s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      .client {
+        width: 20%;
+        height: 100%;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        filter: grayscale(100%);
+        transition: 0.3s all ease;
+      }
+      @keyframes carousel-animation {
+        0% {
+          transform: translateX(0);
+        }
+
+        40% {
+          transform: translateX(0);
+        }
+
+        60% {
+          transform: translateX(-50%);
+        }
+
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .client:hover {
+        filter: grayscale(0%);
+      }
+      .client1 {
+        background-image: url(../images/brand1.webp);
+      }
+      .client2 {
+        background-image: url(../images/brand2.webp);
+      }
+      .client3 {
+        background-image: url(../images/brand3.webp);
+      }
+      .client4 {
+        background-image: url(../images/brand4.webp);
+      }
+      .client5 {
+        background-image: url(../images/brand5.webp);
+      }
+      .client6 {
+        background-image: url(../images/brand6.webp);
+      }
+      .client7 {
+        background-image: url(../images/brand7.webp);
+      }
+      .client8 {
+        background-image: url(../images/brand8.webp);
+      }
+      .client9 {
+        background-image: url(../images/brand9.webp);
+      }
+      .client10 {
+        background-image: url(../images/brand10.webp);
+      }
+      .client11 {
+        background-image: url(../images/brand11.webp);
+      }
+      .client12 {
+        background-image: url(../images/brand12.webp);
+      }
+    }
+  }
+  .clients-container:hover {
+    animation-play-state: paused;
+  }
+
+  .view-clients-button {
+    @include flexCenter();
+    transition: 0.3s all ease;
+    margin-right: 5%;
+    .arrow-icon {
+      margin-left: 0.5rem;
+      font-size: 1.5rem;
+    }
+  }
+  .view-clients-button:hover {
+    color: var(--global-color-red);
+  }
+}
+//Clients section end
+
+//Projects section start
+.projects-content {
+  @include flexCenterColumn();
+  .projects {
+    @include flexCenterColumn();
+    width: 100%;
+    overflow-x: hidden;
+    .project {
+      position: relative;
+      background-position: center;
+      background-size: cover;
+      height: 60vh;
+      width: 100%;
+      margin-bottom: 5rem;
+      cursor: pointer;
+      .info-overlay {
+        @include flexCenterColumn();
+        justify-content: flex-end;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        padding-left: 2rem;
+        color: white;
+        background-color: rgba(0, 0, 0, 0);
+        transition: 0.3s all ease;
+        .text {
+          font-size: 4rem;
+          opacity: 0;
+          transition: 0.3s all ease;
+        }
+        .arrow-icon {
+          transform-origin: bottom left;
+          font-size: 4rem;
+          transition: 0.3s all ease;
+          color: white;
+        }
+      }
+      .company-logo {
+        position: absolute;
+        transform-origin: bottom right;
+        right: 0;
+        bottom: -4vh;
+        height: 22vh;
+        width: 30%;
+        background-color: var(--global-color-red);
+        z-index: 2;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: 0.2s all ease;
+      }
+    }
+    .project1 {
+      background-image: url(../images/client01.webp);
+      .company-logo1 {
+        background-image: url(../images/brand-white01.webp);
+      }
+    }
+    .project2 {
+      background-image: url(../images/client02.webp);
+      .company-logo2 {
+        background-image: url(../images/brand-white02.webp);
+      }
+    }
+    .project3 {
+      background-image: url(../images/client03.webp);
+      .company-logo3 {
+        background-image: url(../images/brand-white03.webp);
+      }
+    }
+    .project:hover {
+      .info-overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        .text {
+          opacity: 1;
+          margin-bottom: 3rem;
+        }
+        .arrow-icon {
+          transform: scale(2);
+          color: var(--global-color-red);
+        }
+      }
+      .company-logo {
+        opacity: 0;
+        transform: translate(100%);
+      }
+    }
+  }
+}
+//Projects section end
+
+//Services section start
+.services-content {
+  height: 50vh;
+  .services-background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/services.webp);
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 1) !important;
+    .services-overlay {
+      position: absolute;
+      @include flexCenter();
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      padding: 0 9%;
+      background-color: rgba(0, 0, 0, 0.7);
+      .services-info {
+        width: 20%;
+        color: white;
+        .line {
+          background-color: white;
+          height: 0.2rem;
+          width: 3rem;
+          margin-bottom: 0.5rem;
+        }
+        h2 {
+          margin-bottom: 1rem;
+        }
+      }
+      .services {
+        @include flexCenter();
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 50%;
+        height: 80%;
+        .service {
+          @include flexCenterColumn();
+          align-items: flex-start;
+          width: 48%;
+          height: 45%;
+          background-color: rgba(255, 255, 255, 0.05);
+          color: white;
+          padding: 0 2rem;
+          border: 2px solid transparent;
+          transition: 0.3s all ease;
+          .icon {
+            color: var(--global-color-red);
+            font-size: 4rem;
+            opacity: 0.7;
+            margin-bottom: 1rem;
+            margin-left: 1rem;
+          }
+        }
+        .service:hover {
+          border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+  }
+}
+//Services section end
+
+//Locations section start
+.locations-content {
+  @include flexCenter();
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  .location {
+    margin: 0 2rem;
+    width: 28%;
+    .location-image {
+      width: 100%;
+      height: 13rem;
+      background-position: center;
+      background-size: cover;
+    }
+    h3 {
+      margin: 1rem 0;
+    }
+    .location-image1 {
+      background-image: url(../images/location1.webp);
+    }
+    .location-image2 {
+      background-image: url(../images/location2.webp);
+    }
+  }
+}
+//Locations section end
+
+//Footer section start
+.footer-section {
+  background-color: rgb(218, 218, 218);
+
+  .footer-content {
+    @include flexCenter();
+    justify-content: space-between;
+    height: 5rem;
+    .categories {
+      @include flexCenter();
+      justify-content: space-between;
+      width: 40%;
+      .category {
+        transition: 0.3s all ease;
+      }
+      .category:hover {
+        color: var(--global-color-red);
+      }
+    }
+
+    .social-media-icons {
+      @include flexCenter();
+      justify-content: space-between;
+      width: 10%;
+      .icon {
+        transition: 0.3s all ease;
+        font-size: 1.1rem;
+      }
+      .icon:hover {
+        color: var(--global-color-red);
+      }
+    }
+  }
+}
+//Footer section end
+
+//Media querys start
+@media only screen and (max-width: 1250px) {
+  .wrapper {
+    @include flexCenter();
+    width: 100%;
+    padding: 0 1.5rem;
+    .container {
+      width: 100%;
+    }
+  }
+
+  .welcome-content {
+    .welcome-background {
+      .welcome-text {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .welcome-content {
+    .welcome-background {
+      height: 50vh;
+      .welcome-text {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .overlay-menu-wrapper {
+    width: 40%;
+  }
+
+  .button-invisible {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .clients-content {
+    margin: 2rem 0;
+  }
+
+  .projects-content {
+    .projects {
+      .project {
+        height: 40vh;
+        .company-logo {
+          bottom: -2vh;
+          height: 15vh;
+          width: 30%;
+        }
+      }
+    }
+  }
+
+  .services-content {
+    height: 32rem;
+    .services-background {
+      .services-overlay {
+        padding: 0 2rem;
+        .services-info {
+          width: 25%;
+        }
+        .services {
+          width: 60%;
+          height: 80%;
+          .service {
+            width: 48%;
+            height: 45%;
+          }
+        }
+      }
+    }
+  }
+
+  .locations-content {
+    .location {
+      width: 35%;
+    }
+  }
+
+  .footer-section {
+    .footer-content {
+      .categories {
+        width: 50%;
+      }
+      .social-media-icons {
+        width: 15%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .overlay-menu-wrapper {
+    width: 50%;
+  }
+
+  .navbar-content {
+    .search-bar-wrapper {
+      .search-field-open {
+        width: 13rem;
+      }
+    }
+  }
+
+  .welcome-content {
+    margin-top: 9rem;
+    .welcome-background {
+      height: 50vh;
+      .welcome-text {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  .clients-content {
+    @include flexCenterColumn();
+    margin: 2rem 0;
+    height: 9rem;
+    .clients-carousel {
+      width: 100%;
+      .clients-container {
+        width: 300%;
+        animation-duration: 6s;
+        .client {
+          width: 25%;
+          height: 100%;
+        }
+        @keyframes carousel-animation {
+          0% {
+            transform: translateX(0);
+          }
+
+          22% {
+            transform: translateX(0);
+          }
+
+          28% {
+            transform: translateX(calc(-100% / 3));
+          }
+
+          72% {
+            transform: translateX(calc(-100% / 3));
+          }
+
+          78% {
+            transform: translateX(calc(-100% / 3 * 2));
+          }
+
+          100% {
+            transform: translateX(calc(-100% / 3 * 2));
+          }
+        }
+      }
+    }
+    .view-clients-button {
+      margin-top: 1rem;
+      margin-right: 0;
+      .arrow-icon {
+        margin-left: 0.5;
+      }
+    }
+  }
+
+  .projects-content {
+    .projects {
+      .project {
+        height: 40vh;
+        margin-bottom: 3rem;
+        .info-overlay {
+          .text {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+  }
+
+  .services-content {
+    height: 30rem;
+    .services-background {
+      .services-overlay {
+        padding: 0 2rem;
+        .services-info {
+          width: 30%;
+        }
+        .services {
+          width: 60%;
+          height: 90%;
+          .service {
+            width: 48%;
+            height: 45%;
+            padding: 0 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .locations-content {
+    .location {
+      margin: 0 1rem;
+      width: 40%;
+    }
+  }
+  .footer-section {
+    .footer-content {
+      .categories {
+        width: 60%;
+      }
+      .social-media-icons {
+        width: 20%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .wrapper {
+    @include flexCenter();
+    padding: 0 0;
+  }
+
+  .navbar-content {
+    padding: 0 1rem;
+    .website-logo {
+      .website-logo-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+      .website-logo-text {
+        margin-left: 0.4rem;
+        font-size: 1.2rem;
+      }
+    }
+
+    .search-bar-wrapper {
+      .search-field {
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        height: 80%;
+        width: 0%;
+        margin-left: 0;
+        background-color: transparent;
+      }
+      .search-button {
+        margin-left: 1rem;
+      }
+      .become-client {
+        display: none;
+      }
+      .search-field-open {
+        width: 100%;
+        padding: 0 1rem;
+        border: 1px solid transparent;
+        border-top: 2px solid rgba(0, 0, 0, 0.1);
+        background-color: white;
+      }
+    }
+  }
+
+  .overlay-menu-wrapper {
+    width: 100%;
+    .overlay-menu-list {
+      .menu-item {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .chat-window {
+    height: 70vh;
+    width: 90%;
+  }
+
+  .welcome-content {
+    margin-top: 9rem;
+    .welcome-background {
+      height: 70vh;
+      .welcome-text {
+        font-size: 2rem;
+        text-align: center;
+        .text-line {
+          height: 6rem;
+          @include flexCenter();
+        }
+        .text-line1 {
+          padding-bottom: 0.5rem;
+          align-items: flex-end;
+        }
+        .text-line2 {
+          padding-top: 0.5rem;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+
+  .clients-content {
+    margin: 3rem 0;
+    height: auto;
+    .clients-carousel {
+      display: none;
+    }
+    .view-clients-button {
+      margin-top: 0;
+    }
+  }
+
+  .projects-content {
+    .projects {
+      .project {
+        height: 70vh;
+        .info-overlay {
+          justify-content: space-between;
+          background-color: rgba(0, 0, 0, 0.5);
+          .text {
+            opacity: 1;
+            margin-top: 2rem;
+            margin-bottom: 0;
+            font-size: 1.6rem;
+          }
+          .arrow-icon {
+            transform: scale(1.5);
+            color: var(--global-color-red);
+          }
+        }
+        .company-logo {
+          bottom: -1vh;
+          opacity: 1;
+          transform: translate(0%);
+          background-size: cover;
+          height: 7rem;
+          width: 10rem;
+        }
+      }
+      .project:hover {
+        .info-overlay {
+          justify-content: space-between;
+          background-color: rgba(0, 0, 0, 0.5);
+          .text {
+            opacity: 1;
+            margin-top: 2rem;
+            margin-bottom: 0;
+            font-size: 1.6rem;
+          }
+          .arrow-icon {
+            transform: scale(1.5);
+            color: var(--global-color-red);
+          }
+        }
+        .company-logo {
+          bottom: -1vh;
+          opacity: 1;
+          transform: translate(0%);
+          background-size: cover;
+          height: 7rem;
+          width: 10rem;
+        }
+      }
+    }
+  }
+
+  .services-content {
+    height: 80vh;
+    .services-background {
+      background-position: left;
+      .services-overlay {
+        @include flexCenterColumn();
+        justify-content: space-between;
+        padding: 2rem 1rem;
+        .services-info {
+          width: 100%;
+        }
+        .services {
+          align-items: flex-start;
+          width: 100%;
+          height: auto;
+          .service {
+            width: 48%;
+            height: 12rem;
+            padding: 0 1rem;
+            margin-bottom: 1rem;
+            background-color: rgba(255, 255, 255, 0.13);
+            h3 {
+              font-size: 1.1rem;
+            }
+          }
+          .service3,
+          .service4 {
+            margin-bottom: 0rem;
+          }
+        }
+      }
+    }
+  }
+
+  .locations-content {
+    @include flexCenterColumn();
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    .location {
+      margin: 0 2rem;
+      width: 100%;
+      padding: 0 1rem;
+    }
+    .location1 {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .footer-section {
+    .footer-content {
+      height: 6rem;
+      padding: 0 1rem;
+      @include flexCenterColumn();
+      .categories {
+        width: 100%;
+      }
+      .social-media-icons {
+        margin-top: 1rem;
+        width: 35%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .navbar-content {
+    .burger-menu-wrapper {
+      .burger-menu-text {
+        display: none;
+      }
+    }
+  }
+
+  .overlay-menu-wrapper {
+    .overlay-menu-list {
+      .menu-item {
+        padding: 0.7rem 0;
+      }
+    }
+  }
+  .projects-content {
+    .projects {
+      .project {
+        .info-overlay {
+          padding-left: 1rem;
+        }
+      }
+    }
+  }
+
+  .services-content {
+    height: 95vh;
+  }
+
+  .footer-section {
+    .footer-content {
+      height: 8rem;
+      .categories {
+        flex-wrap: wrap;
+        .category {
+          width: 50%;
+          text-align: center;
+        }
+        .category1,
+        .category2 {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 320px) {
+  .chat-window {
+    height: 65vh;
+    .new-message {
+      .message-field {
+        width: 85%;
+      }
+    }
+  }
+
+  .welcome-content {
+    margin-top: 8rem;
+    .welcome-background {
+      .welcome-text {
+        font-size: 1.7rem;
+      }
+    }
+  }
+
+  .services-content {
+    height: 110vh;
+    .services-background {
+      .services-overlay {
+        .services {
+          .service {
+            padding: 0 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+//Media querys end
