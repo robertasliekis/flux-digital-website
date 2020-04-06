@@ -1,16 +1,16 @@
 //Burger menu control start
-$(".burger-menu-wrapper").click(function() {
+$(".burger-menu-wrapper").click(function () {
   $(".overlay-menu-wrapper").addClass("overlay-menu-visible");
 });
 
-$(".burger-menu-side").click(function() {
+$(".burger-menu-side").click(function () {
   $(".overlay-menu-wrapper").removeClass("overlay-menu-visible");
 });
 //Burger menu control end
 
 //Search bar fieldstart
 var timesClicked = 1;
-$(".search-button").click(function() {
+$(".search-button").click(function () {
   if (timesClicked % 2 != 0) {
     $(".search-field").addClass("search-field-open");
     $(".become-client").addClass("button-invisible");
@@ -27,7 +27,7 @@ $(".search-button").click(function() {
 
 //Chat button start
 var timesClicked = 1;
-$(".chat-button").click(function() {
+$(".chat-button").click(function () {
   if (timesClicked % 2 != 0) {
     $(".icon-wrapper").addClass("chat-button-active");
     $(".chat-window").addClass("chat-window-active");
@@ -43,7 +43,7 @@ $(".chat-button").click(function() {
 //chat button end
 
 //On scroll chat button animation start
-$(window).on("scroll", function() {
+$(window).on("scroll", function () {
   var footerTop = $(".footer-section").offset().top;
   var chatButtonTop = $(".chat-button").offset().top;
   if (chatButtonTop > footerTop - 100) {
@@ -55,3 +55,13 @@ $(window).on("scroll", function() {
   }
 });
 //On scroll chat button animation end
+
+setTimeout(function () {
+  let viewheight = $(window).height();
+  let viewwidth = $(window).width();
+  let viewport = document.querySelector("meta[name=viewport]");
+  viewport.setAttribute(
+    "content",
+    "height=" + viewheight + "px, width=" + viewwidth + "px, initial-scale=1.0"
+  );
+}, 300);
