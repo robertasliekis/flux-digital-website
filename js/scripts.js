@@ -56,6 +56,7 @@ $(window).on("scroll", function () {
 });
 //On scroll chat button animation end
 
+//Vieport height stays the same when mobile keyboard appears
 setTimeout(function () {
   let viewheight = $(window).height();
   let viewwidth = $(window).width();
