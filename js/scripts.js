@@ -57,7 +57,7 @@ $(window).on("scroll", function () {
 //On scroll chat button animation end
 
 //Vieport height stays the same when mobile keyboard appears
-setTimeout(function () {
+/*setTimeout(function () {
   let viewheight = $(window).height();
   let viewwidth = $(window).width();
   let viewport = document.querySelector("meta[name=viewport]");
@@ -65,4 +65,4 @@ setTimeout(function () {
     "content",
     "height=" + viewheight + "px, width=" + viewwidth + "px, initial-scale=1.0"
   );
-}, 300);
+}, 100);*/
