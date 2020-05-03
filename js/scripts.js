@@ -1,26 +1,57 @@
-//Burger menu control start
-$(".burger-menu-wrapper").click(function () {
-  $(".overlay-menu-wrapper").addClass("overlay-menu-visible");
+if (window.innerWidth <= 1024) {
+  $(".overlay-menu").height(window.innerHeight);
+}
+
+window.addEventListener("resize", () => {
+  $(".overlay-menu").height(window.innerHeight);
 });
 
-$(".burger-menu-side").click(function () {
-  $(".overlay-menu-wrapper").removeClass("overlay-menu-visible");
+//Burger menu control start
+var timesClicked = 0;
+var scrollTop1 = 0;
+var scrollTop2 = 0;
+
+$(".burger-menu-wrapper").click(function () {
+  var scrollTop1 = $(window).scrollTop();
+
+  if (timesClicked % 2 != 0) {
+    $(".overlay-menu-wrapper").addClass("overlay-menu-visible");
+
+    if (window.innerWidth <= 414) {
+      document.getElementById("empty-section").style.marginTop =
+        -scrollTop1 + "px";
+      $(".website-wrapper").addClass("scroll-disabled ");
+    }
+  } else {
+    $(".overlay-menu-wrapper").removeClass("overlay-menu-visible");
+
+    if (window.innerWidth <= 414) {
+      $(".website-wrapper").removeClass("scroll-disabled");
+      document.getElementById("empty-section").style.marginTop = "0px";
+      window.scrollTo(0, scrollTop2);
+    }
+  }
+  timesClicked++;
+  if (timesClicked > 1) {
+    timesClicked = 0;
+  }
+  scrollTop2 = scrollTop1;
 });
 //Burger menu control end
 
 //Search bar fieldstart
-var timesClicked = 1;
+var index = 1;
 $(".search-button").click(function () {
-  if (timesClicked % 2 != 0) {
+  if (index % 2 != 0) {
     $(".search-field").addClass("search-field-open");
     $(".become-client").addClass("button-invisible");
   } else {
     $(".search-field").removeClass("search-field-open");
     $(".become-client").removeClass("button-invisible");
   }
-  timesClicked++;
-  if (timesClicked > 1) {
-    timesClicked = 0;
+  index++;
+  if (index > 1) {
+    index = 0;
   }
 });
 //Search bar field end

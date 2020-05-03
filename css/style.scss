@@ -68,6 +68,12 @@ body {
   align-items: center;
 }
 
+@mixin flexCenterBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @mixin flexCenterColumn {
   @include flexCenter();
   flex-direction: column;
@@ -81,6 +87,109 @@ body {
   }
 }
 
+@media only screen and (min-width: 1025px) {
+  .burger-menu-wrapper:hover {
+    color: var(--global-color-red);
+    .burger-menu {
+      //  height: 1.4rem;
+      .line {
+        background-color: var(--global-color-red);
+      }
+    }
+  }
+
+  .navbar-content {
+    .burger-menu-wrapper:hover {
+      .burger-menu {
+        height: 1.4rem;
+      }
+    }
+  }
+
+  .become-client:hover {
+    color: var(--global-color-red);
+  }
+
+  .menu-item-name:hover {
+    color: var(--global-color-red);
+  }
+
+  .icon:hover {
+    color: var(--global-color-red);
+  }
+
+  .chat-button:hover {
+    box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .welcome-content {
+    .welcome-background {
+      .button:hover {
+        background-color: white;
+        color: var(--global-color-red);
+      }
+    }
+  }
+
+  .clients-content {
+    .clients-carousel {
+      .clients-container {
+        .client:hover {
+          filter: grayscale(0%);
+        }
+      }
+      .clients-container:hover {
+        animation-play-state: paused;
+      }
+    }
+  }
+
+  .projects-content {
+    .projects {
+      .project:hover {
+        .info-overlay {
+          background-color: rgba(0, 0, 0, 0.5);
+          .text {
+            opacity: 1;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+            font-size: 4rem;
+          }
+          .arrow-icon {
+            transform: scale(1.3);
+            color: var(--global-color-red);
+          }
+        }
+        .company-logo {
+          opacity: 0;
+          transform: translate(100%);
+          background-size: cover;
+        }
+      }
+    }
+  }
+
+  .view-clients-button:hover {
+    color: var(--global-color-red);
+  }
+
+  .category:hover {
+    color: var(--global-color-red);
+  }
+
+  .services-content {
+    .services-background {
+      .services-overlay {
+        .services {
+          .service:hover {
+            border: 2px solid rgba(255, 255, 255, 0.2);
+          }
+        }
+      }
+    }
+  }
+}
+
 //Global values end
 
 .website-wrapper {
@@ -88,6 +197,12 @@ body {
   background-color: white;
   @include flexCenterColumn();
   overflow: hidden;
+}
+
+.scroll-disabled {
+  height: calc(100vh - 56px);
+  overflow: hidden;
+  justify-content: flex-start;
 }
 
 //Navigation bar start
@@ -117,14 +232,7 @@ body {
     font-weight: 600;
   }
 }
-.burger-menu-wrapper:hover {
-  color: var(--global-color-red);
-  .burger-menu {
-    .line {
-      background-color: var(--global-color-red);
-    }
-  }
-}
+
 //Burger menu end
 .navbar-section {
   background-color: white;
@@ -140,15 +248,7 @@ body {
   @include flexCenter();
   justify-content: space-between;
   font-weight: 600;
-  .burger-menu-wrapper:hover {
-    color: var(--global-color-red);
-    .burger-menu {
-      height: 1.4rem;
-      .line {
-        background-color: var(--global-color-red);
-      }
-    }
-  }
+
   .website-logo {
     position: absolute;
     transform: translate(-50%, 0%);
@@ -191,13 +291,14 @@ body {
     .search-button {
       margin-left: 1rem;
       cursor: pointer;
+      .icon {
+        transition: 0.5s all ease;
+      }
     }
     .become-client {
       transition: 0.3s all ease;
     }
-    .become-client:hover {
-      color: var(--global-color-red);
-    }
+
     .search-field-open {
       width: 12rem;
       padding: 0 1rem;
@@ -266,9 +367,6 @@ body {
       .menu-item-name {
         transition: 0.3s all ease;
       }
-      .menu-item-name:hover {
-        color: var(--global-color-red);
-      }
     }
   }
   .social-media-icons {
@@ -278,9 +376,6 @@ body {
       transition: 0.3s all ease;
       padding: 0 1rem;
       font-size: 1.5rem;
-    }
-    .icon:hover {
-      color: var(--global-color-red);
     }
   }
 }
@@ -313,6 +408,7 @@ body {
     @include flexCenter();
     .icon {
       transition: 0.3s all ease;
+      color: white;
     }
     .icon2 {
       position: absolute;
@@ -332,9 +428,7 @@ body {
 .chat-button-bottom {
   bottom: 6rem;
 }
-.chat-button:hover {
-  box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 0.2);
-}
+
 //Chat button end
 
 //Chat window start
@@ -472,10 +566,6 @@ body {
       cursor: pointer;
       font-weight: 500;
     }
-    .button:hover {
-      background-color: white;
-      color: var(--global-color-red);
-    }
   }
 }
 //Welcome section end
@@ -486,7 +576,6 @@ body {
   justify-content: space-between;
   margin: 4rem 0;
   height: 9rem;
-
   .clients-carousel {
     @include flexCenter();
     justify-content: flex-start;
@@ -533,9 +622,7 @@ body {
           transform: translateX(-50%);
         }
       }
-      .client:hover {
-        filter: grayscale(0%);
-      }
+
       .client1 {
         background-image: url(../images/brand1.webp);
       }
@@ -574,9 +661,6 @@ body {
       }
     }
   }
-  .clients-container:hover {
-    animation-play-state: paused;
-  }
 
   .view-clients-button {
     @include flexCenter();
@@ -586,9 +670,6 @@ body {
       margin-left: 0.5rem;
       font-size: 1.5rem;
     }
-  }
-  .view-clients-button:hover {
-    color: var(--global-color-red);
   }
 }
 //Clients section end
@@ -625,7 +706,7 @@ body {
         }
         .arrow-icon {
           transform-origin: bottom left;
-          font-size: 4rem;
+          font-size: 8rem;
           transition: 0.3s all ease;
           color: white;
         }
@@ -634,8 +715,8 @@ body {
         position: absolute;
         transform-origin: bottom right;
         right: 0;
-        bottom: -4vh;
-        height: 22vh;
+        bottom: -3rem;
+        height: 15rem;
         width: 30%;
         background-color: var(--global-color-red);
         z-index: 2;
@@ -661,23 +742,6 @@ body {
       background-image: url(../images/client03.webp);
       .company-logo3 {
         background-image: url(../images/brand-white03.webp);
-      }
-    }
-    .project:hover {
-      .info-overlay {
-        background-color: rgba(0, 0, 0, 0.5);
-        .text {
-          opacity: 1;
-          margin-bottom: 3rem;
-        }
-        .arrow-icon {
-          transform: scale(2);
-          color: var(--global-color-red);
-        }
-      }
-      .company-logo {
-        opacity: 0;
-        transform: translate(100%);
       }
     }
   }
@@ -740,9 +804,6 @@ body {
             margin-left: 1rem;
           }
         }
-        .service:hover {
-          border: 2px solid rgba(255, 255, 255, 0.2);
-        }
       }
     }
   }
@@ -779,7 +840,6 @@ body {
 //Footer section start
 .footer-section {
   background-color: rgb(218, 218, 218);
-
   .footer-content {
     @include flexCenter();
     justify-content: space-between;
@@ -791,21 +851,15 @@ body {
       .category {
         transition: 0.3s all ease;
       }
-      .category:hover {
-        color: var(--global-color-red);
-      }
     }
 
     .social-media-icons {
       @include flexCenter();
       justify-content: space-between;
-      width: 10%;
+      width: 15%;
       .icon {
         transition: 0.3s all ease;
-        font-size: 1.1rem;
-      }
-      .icon:hover {
-        color: var(--global-color-red);
+        font-size: 1.5rem;
       }
     }
   }
@@ -853,16 +907,29 @@ body {
 
   .clients-content {
     margin: 2rem 0;
+    .clients-carousel {
+      .clients-container {
+        .client {
+          filter: grayscale(0%);
+        }
+      }
+    }
   }
 
   .projects-content {
     .projects {
       .project {
-        height: 40vh;
+        height: 40rem;
         .company-logo {
           bottom: -2vh;
           height: 15vh;
           width: 30%;
+        }
+        .info-overlay {
+          .text {
+            opacity: 1;
+            font-size: 3rem;
+          }
         }
       }
     }
@@ -981,11 +1048,14 @@ body {
   .projects-content {
     .projects {
       .project {
-        height: 40vh;
+        height: 35rem;
         margin-bottom: 3rem;
         .info-overlay {
           .text {
-            font-size: 3rem;
+            font-size: 2rem;
+          }
+          .arrow-icon {
+            font-size: 6rem;
           }
         }
       }
@@ -1093,7 +1163,7 @@ body {
   .welcome-content {
     margin-top: 9rem;
     .welcome-background {
-      height: 70vh;
+      height: 37rem;
       .welcome-text {
         font-size: 2rem;
         text-align: center;
@@ -1117,7 +1187,20 @@ body {
     margin: 3rem 0;
     height: auto;
     .clients-carousel {
-      display: none;
+      width: 100%;
+      height: auto;
+      overflow: visible;
+      .clients-container {
+        @include flexCenterBetween();
+        position: relative;
+        flex-wrap: wrap;
+        animation-play-state: paused;
+        width: 100%;
+        .client {
+          width: 33%;
+          height: 10rem;
+        }
+      }
     }
     .view-clients-button {
       margin-top: 0;
@@ -1127,10 +1210,9 @@ body {
   .projects-content {
     .projects {
       .project {
-        height: 70vh;
+        height: 25rem;
         .info-overlay {
           justify-content: space-between;
-          background-color: rgba(0, 0, 0, 0.5);
           .text {
             opacity: 1;
             margin-top: 2rem;
@@ -1138,48 +1220,23 @@ body {
             font-size: 1.6rem;
           }
           .arrow-icon {
-            transform: scale(1.5);
-            color: var(--global-color-red);
+            transform: scale(1.2);
           }
         }
         .company-logo {
-          bottom: -1vh;
+          bottom: -1rem;
           opacity: 1;
           transform: translate(0%);
           background-size: cover;
-          height: 7rem;
-          width: 10rem;
-        }
-      }
-      .project:hover {
-        .info-overlay {
-          justify-content: space-between;
-          background-color: rgba(0, 0, 0, 0.5);
-          .text {
-            opacity: 1;
-            margin-top: 2rem;
-            margin-bottom: 0;
-            font-size: 1.6rem;
-          }
-          .arrow-icon {
-            transform: scale(1.5);
-            color: var(--global-color-red);
-          }
-        }
-        .company-logo {
-          bottom: -1vh;
-          opacity: 1;
-          transform: translate(0%);
-          background-size: cover;
-          height: 7rem;
-          width: 10rem;
+          height: 9rem;
+          width: 13rem;
         }
       }
     }
   }
 
   .services-content {
-    height: 80vh;
+    height: 40rem;
     .services-background {
       background-position: left;
       .services-overlay {
@@ -1236,13 +1293,17 @@ body {
       }
       .social-media-icons {
         margin-top: 1rem;
-        width: 35%;
+        width: 40%;
       }
     }
   }
 }
 
 @media only screen and (max-width: 375px) {
+  .chat-button-bottom {
+    bottom: 8rem;
+  }
+
   .navbar-content {
     .burger-menu-wrapper {
       .burger-menu-text {
