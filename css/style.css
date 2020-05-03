@@ -163,10 +163,10 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: hidden;
+  padding-top: 11rem;
 }
 
 .scroll-disabled {
-  height: calc(100vh - 56px);
   overflow: hidden;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
@@ -382,6 +382,7 @@ body {
   height: 100vh;
   padding: 2rem 0;
   background-color: white;
+  background-color: red;
   -webkit-box-shadow: 0px 0px 25px 6px rgba(0, 0, 0, 0);
           box-shadow: 0px 0px 25px 6px rgba(0, 0, 0, 0);
   font-weight: 800;
@@ -670,10 +671,6 @@ body {
 
 .chat-window-active {
   z-index: 3;
-}
-
-.welcome-content {
-  margin-top: 11rem;
 }
 
 .welcome-content .welcome-background {
@@ -1352,14 +1349,14 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+  .website-wrapper {
+    padding-top: 9rem;
+  }
   .overlay-menu-wrapper {
     width: 50%;
   }
   .navbar-content .search-bar-wrapper .search-field-open {
     width: 13rem;
-  }
-  .welcome-content {
-    margin-top: 9rem;
   }
   .welcome-content .welcome-background {
     height: 50vh;
@@ -1551,9 +1548,6 @@ body {
     height: 70vh;
     width: 90%;
   }
-  .welcome-content {
-    margin-top: 9rem;
-  }
   .welcome-content .welcome-background {
     height: 32rem;
   }
@@ -1607,8 +1601,8 @@ body {
     position: relative;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -webkit-animation-play-state: paused;
-            animation-play-state: paused;
+    -webkit-animation-name: none;
+            animation-name: none;
     width: 100%;
   }
   .clients-content .clients-carousel .clients-container .client {
@@ -1779,14 +1773,14 @@ body {
 }
 
 @media only screen and (max-width: 320px) {
+  .website-wrapper {
+    padding-top: 8rem;
+  }
   .chat-window {
     height: 65vh;
   }
   .chat-window .new-message .message-field {
     width: 85%;
-  }
-  .welcome-content {
-    margin-top: 8rem;
   }
   .welcome-content .welcome-background .welcome-text {
     font-size: 1.7rem;

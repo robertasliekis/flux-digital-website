@@ -1,9 +1,9 @@
 if (window.innerWidth <= 1024) {
-  $(".overlay-menu-wrapper").height(window.innerHeight);
+  $(".overlay-menu-wrapper").height(window.innerHeight - 56);
 }
 
 window.addEventListener("resize", () => {
-  $(".overlay-menu-wrapper").height(window.innerHeight);
+  $(".overlay-menu-wrapper").height(window.innerHeight - 56);
 });
 
 //Burger menu control start
@@ -21,12 +21,14 @@ $(".burger-menu-wrapper").click(function () {
       document.getElementById("empty-section").style.marginTop =
         -scrollTop1 + "px";
       $(".website-wrapper").addClass("scroll-disabled ");
+      $(".website-wrapper").height(window.innerHeight);
     }
   } else {
     $(".overlay-menu-wrapper").removeClass("overlay-menu-visible");
 
     if (window.innerWidth <= 414) {
       $(".website-wrapper").removeClass("scroll-disabled");
+      $(".website-wrapper").height("auto");
       document.getElementById("empty-section").style.marginTop = "0px";
       window.scrollTo(0, scrollTop2);
     }
@@ -37,6 +39,7 @@ $(".burger-menu-wrapper").click(function () {
   }
   scrollTop2 = scrollTop1;
 });
+
 //Burger menu control end
 
 //Search bar fieldstart

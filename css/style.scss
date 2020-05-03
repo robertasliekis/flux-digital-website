@@ -197,11 +197,12 @@ body {
   background-color: white;
   @include flexCenterColumn();
   overflow: hidden;
+  padding-top: 11rem;
 }
 
 .scroll-disabled {
-  height: calc(100vh - 56px);
-  // height: 100vh;
+  //height: calc(100vh - 56px);
+  //height: 100vh;
   overflow: hidden;
   justify-content: flex-start;
 }
@@ -336,9 +337,9 @@ body {
   height: 100vh;
   padding: 2rem 0;
   background-color: white;
+  background-color: red;
   box-shadow: 0px 0px 25px 6px rgba(0, 0, 0, 0);
   font-weight: 800;
-
   .burger-menu {
     width: 2rem;
     height: 2rem;
@@ -528,7 +529,6 @@ body {
 
 //Welcome section start
 .welcome-content {
-  margin-top: 11rem;
   .welcome-background {
     position: relative;
     @include flexCenterColumn();
@@ -975,6 +975,10 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+  .website-wrapper {
+    padding-top: 9rem;
+  }
+
   .overlay-menu-wrapper {
     width: 50%;
   }
@@ -988,7 +992,6 @@ body {
   }
 
   .welcome-content {
-    margin-top: 9rem;
     .welcome-background {
       height: 50vh;
       .welcome-text {
@@ -1162,7 +1165,6 @@ body {
   }
 
   .welcome-content {
-    margin-top: 9rem;
     .welcome-background {
       height: 32rem;
       .welcome-text {
@@ -1195,7 +1197,7 @@ body {
         @include flexCenterBetween();
         position: relative;
         flex-wrap: wrap;
-        animation-play-state: paused;
+        animation-name: none;
         width: 100%;
         .client {
           width: 33%;
@@ -1352,6 +1354,9 @@ body {
   }
 }
 @media only screen and (max-width: 320px) {
+  .website-wrapper {
+    padding-top: 8rem;
+  }
   .chat-window {
     height: 65vh;
     .new-message {
@@ -1362,7 +1367,6 @@ body {
   }
 
   .welcome-content {
-    margin-top: 8rem;
     .welcome-background {
       .welcome-text {
         font-size: 1.7rem;
