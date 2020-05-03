@@ -1,9 +1,9 @@
 if (window.innerWidth <= 1024) {
-  $(".overlay-menu-wrapper").height(window.innerHeight - 56);
+  $(".overlay-menu-wrapper").height(window.innerHeight);
 }
 
 window.addEventListener("resize", () => {
-  $(".overlay-menu-wrapper").height(window.innerHeight - 56);
+  $(".overlay-menu-wrapper").height(window.innerHeight);
 });
 
 //Burger menu control start
