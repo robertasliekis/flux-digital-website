@@ -2,10 +2,11 @@ if (window.innerWidth <= 1024) {
   $(".overlay-menu-wrapper").height(window.innerHeight - 56);
   $(".welcome-background").height(window.innerHeight / 2);
 }
-var backgroundHeight = 0;
 if (window.innerHeight > 0 && backgroundHeight == 0) {
   var backgroundHeight = window.innerHeight;
 }
+
+var backgroundHeight = 736;
 
 if (window.innerWidth <= 414) {
   $(".welcome-background").height(backgroundHeight - 144);
