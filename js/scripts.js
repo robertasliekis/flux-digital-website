@@ -1,9 +1,18 @@
 if (window.innerWidth <= 1024) {
   $(".overlay-menu-wrapper").height(window.innerHeight - 56);
+  $(".welcome-background").height(window.innerHeight / 2);
+}
+
+if (window.innerWidth <= 414) {
+  $(".welcome-background").height(window.innerHeight - 144);
 }
 
 window.addEventListener("resize", () => {
   $(".overlay-menu-wrapper").height(window.innerHeight - 56);
+  $(".welcome-background").height(window.innerHeight / 2);
+  if (window.innerWidth <= 414) {
+    $(".welcome-background").height(window.innerHeight - 144);
+  }
 });
 
 //Burger menu control start

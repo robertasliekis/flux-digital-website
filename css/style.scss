@@ -992,7 +992,6 @@ body {
 
   .welcome-content {
     .welcome-background {
-      height: 50vh;
       .welcome-text {
         font-size: 2.5rem;
       }
@@ -1205,7 +1204,7 @@ body {
       }
     }
     .view-clients-button {
-      margin-top: 0;
+      margin-top: 1rem;
     }
   }
 
@@ -1354,7 +1353,7 @@ body {
 }
 @media only screen and (max-width: 320px) {
   .website-wrapper {
-    padding-top: 8rem;
+    padding-top: 9rem;
   }
   .chat-window {
     height: 65vh;

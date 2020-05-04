@@ -1358,9 +1358,6 @@ body {
   .navbar-content .search-bar-wrapper .search-field-open {
     width: 13rem;
   }
-  .welcome-content .welcome-background {
-    height: 50vh;
-  }
   .welcome-content .welcome-background .welcome-text {
     font-size: 2.5rem;
   }
@@ -1610,7 +1607,7 @@ body {
     height: 10rem;
   }
   .clients-content .view-clients-button {
-    margin-top: 0;
+    margin-top: 1rem;
   }
   .projects-content .projects .project {
     height: 25rem;
@@ -1774,7 +1771,7 @@ body {
 
 @media only screen and (max-width: 320px) {
   .website-wrapper {
-    padding-top: 8rem;
+    padding-top: 9rem;
   }
   .chat-window {
     height: 65vh;
