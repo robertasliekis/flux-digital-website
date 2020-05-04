@@ -201,7 +201,7 @@ body {
 }
 
 .scroll-disabled {
-  //height: calc(100vh - 56px);
+  height: calc(100vh - 56px);
   //height: 100vh;
   overflow: hidden;
   justify-content: flex-start;
@@ -330,7 +330,7 @@ body {
   left: 0;
   top: 0;
   transform: translateX(-100%);
-  transition: 1s transform ease;
+  transition: 0.6s transform ease;
   @include flexCenterColumn();
   justify-content: space-between;
   width: 30%;
