@@ -1,9 +1,9 @@
+var backgroundHeight = window.outerHeight;
+
 if (window.innerWidth <= 1024) {
   $(".overlay-menu-wrapper").height(window.innerHeight - 56);
-  $(".welcome-background").height(window.innerHeight / 2);
+  $(".welcome-background").height(backgroundHeight / 2);
 }
-
-var backgroundHeight = window.outerHeight;
 
 if (window.innerWidth <= 414) {
   $(".welcome-background").height(backgroundHeight - 144);
@@ -11,7 +11,7 @@ if (window.innerWidth <= 414) {
 
 window.addEventListener("resize", () => {
   $(".overlay-menu-wrapper").height(window.innerHeight - 56);
-  $(".welcome-background").height(window.innerHeight / 2);
+  $(".welcome-background").height(backgroundHeight / 2);
   if (window.innerWidth <= 414) {
     $(".welcome-background").height(backgroundHeight - 144);
   }
