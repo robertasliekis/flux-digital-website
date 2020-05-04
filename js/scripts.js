@@ -2,16 +2,21 @@ if (window.innerWidth <= 1024) {
   $(".overlay-menu-wrapper").height(window.innerHeight - 56);
   $(".welcome-background").height(window.innerHeight / 2);
 }
+var backgroundHeight = 0;
+if (window.innerHeight > 0 && backgroundHeight == 0) {
+  var backgroundHeight = window.innerHeight;
+}
 
 if (window.innerWidth <= 414) {
-  $(".welcome-background").height(window.innerHeight - 144);
+  $(".welcome-background").height(backgroundHeight - 144);
 }
+console.log(backgroundHeight);
 
 window.addEventListener("resize", () => {
   $(".overlay-menu-wrapper").height(window.innerHeight - 56);
   $(".welcome-background").height(window.innerHeight / 2);
   if (window.innerWidth <= 414) {
-    $(".welcome-background").height(window.innerHeight - 144);
+    $(".welcome-background").height(backgroundHeight - 144);
   }
 });
 
