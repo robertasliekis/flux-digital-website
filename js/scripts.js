@@ -23,15 +23,12 @@ $(".burger-menu-wrapper").click(function () {
       window.setTimeout(function () {
         $(".website-wrapper").addClass("scroll-disabled ");
       }, 600);
-
-      // $(".website-wrapper").height(window.innerHeight);
     }
   } else {
     $(".overlay-menu-wrapper").removeClass("overlay-menu-visible");
 
     if (window.innerWidth <= 414) {
       $(".website-wrapper").removeClass("scroll-disabled");
-      // $(".website-wrapper").height("auto");
       document.getElementById("empty-section").style.marginTop = "0px";
       window.scrollTo(0, scrollTop2);
     }
