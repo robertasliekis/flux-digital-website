@@ -5,13 +5,11 @@ if (window.innerWidth <= 1024) {
 if (window.innerHeight > 0 && backgroundHeight == 0) {
   var backgroundHeight = window.innerHeight;
 }
-
-var backgroundHeight = 736;
+var backgroundHeight = window.outerHeight;
 
 if (window.innerWidth <= 414) {
   $(".welcome-background").height(backgroundHeight - 144);
 }
-console.log(backgroundHeight);
 
 window.addEventListener("resize", () => {
   $(".overlay-menu-wrapper").height(window.innerHeight - 56);
