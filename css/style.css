@@ -276,7 +276,7 @@ body {
 }
 
 .navbar-content .website-logo .website-logo-icon {
-  background-image: url(../images/logo.webp);
+  background-image: url(../images/logo.jpg);
   background-position: center;
   background-size: cover;
   width: 4rem;
@@ -591,7 +591,7 @@ body {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 2rem;
-  background-image: url(../images/support.webp);
+  background-image: url(../images/support.jpg);
   background-position: center;
   background-size: cover;
   border: 2px solid white;
@@ -693,7 +693,7 @@ body {
           justify-content: flex-end;
   height: 60vh;
   width: 100%;
-  background-image: url(../images/background01.webp);
+  background-image: url(../images/background01.jpg);
   background-position: center;
   background-size: cover;
 }
@@ -863,51 +863,51 @@ body {
 }
 
 .clients-content .clients-carousel .clients-container .client1 {
-  background-image: url(../images/brand1.webp);
+  background-image: url(../images/brand1.png);
 }
 
 .clients-content .clients-carousel .clients-container .client2 {
-  background-image: url(../images/brand2.webp);
+  background-image: url(../images/brand2.png);
 }
 
 .clients-content .clients-carousel .clients-container .client3 {
-  background-image: url(../images/brand3.webp);
+  background-image: url(../images/brand3.png);
 }
 
 .clients-content .clients-carousel .clients-container .client4 {
-  background-image: url(../images/brand4.webp);
+  background-image: url(../images/brand4.png);
 }
 
 .clients-content .clients-carousel .clients-container .client5 {
-  background-image: url(../images/brand5.webp);
+  background-image: url(../images/brand5.png);
 }
 
 .clients-content .clients-carousel .clients-container .client6 {
-  background-image: url(../images/brand6.webp);
+  background-image: url(../images/brand6.png);
 }
 
 .clients-content .clients-carousel .clients-container .client7 {
-  background-image: url(../images/brand7.webp);
+  background-image: url(../images/brand7.png);
 }
 
 .clients-content .clients-carousel .clients-container .client8 {
-  background-image: url(../images/brand8.webp);
+  background-image: url(../images/brand8.png);
 }
 
 .clients-content .clients-carousel .clients-container .client9 {
-  background-image: url(../images/brand9.webp);
+  background-image: url(../images/brand9.png);
 }
 
 .clients-content .clients-carousel .clients-container .client10 {
-  background-image: url(../images/brand10.webp);
+  background-image: url(../images/brand10.png);
 }
 
 .clients-content .clients-carousel .clients-container .client11 {
-  background-image: url(../images/brand11.webp);
+  background-image: url(../images/brand11.png);
 }
 
 .clients-content .clients-carousel .clients-container .client12 {
-  background-image: url(../images/brand12.webp);
+  background-image: url(../images/brand12.png);
 }
 
 .clients-content .view-clients-button {
@@ -1037,27 +1037,27 @@ body {
 }
 
 .projects-content .projects .project1 {
-  background-image: url(../images/client01.webp);
+  background-image: url(../images/client01.jpg);
 }
 
 .projects-content .projects .project1 .company-logo1 {
-  background-image: url(../images/brand-white01.webp);
+  background-image: url(../images/brand-white01.png);
 }
 
 .projects-content .projects .project2 {
-  background-image: url(../images/client02.webp);
+  background-image: url(../images/client02.jpg);
 }
 
 .projects-content .projects .project2 .company-logo2 {
-  background-image: url(../images/brand-white02.webp);
+  background-image: url(../images/brand-white02.png);
 }
 
 .projects-content .projects .project3 {
-  background-image: url(../images/client03.webp);
+  background-image: url(../images/client03.jpg);
 }
 
 .projects-content .projects .project3 .company-logo3 {
-  background-image: url(../images/brand-white03.webp);
+  background-image: url(../images/brand-white03.png);
 }
 
 .services-content {
@@ -1068,7 +1068,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  background-image: url(../images/services.webp);
+  background-image: url(../images/services.jpg);
   background-position: center;
   background-size: cover;
   background-color: black !important;
@@ -1195,11 +1195,11 @@ body {
 }
 
 .locations-content .location .location-image1 {
-  background-image: url(../images/location1.webp);
+  background-image: url(../images/location1.jpg);
 }
 
 .locations-content .location .location-image2 {
-  background-image: url(../images/location2.webp);
+  background-image: url(../images/location2.jpg);
 }
 
 .footer-section {
